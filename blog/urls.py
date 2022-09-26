@@ -7,4 +7,5 @@ urlpatterns = [
     path('posts', views.all_posts),
     path('single', views.single_post),
     path('about', views.about),
+   # path('<int:pk>', views.single_post),
 ]
