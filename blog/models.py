@@ -24,6 +24,5 @@ class Post(models.Model):
     Date = models.DateField(auto_now_add=True)
     Author = models.ForeignKey(Author, on_delete=models.CASCADE)
     Topic = models.ForeignKey(Topic, on_delete=models.CASCADE)
-    Image = models.ImageField()
     def __str__(self):
         return self.Title
