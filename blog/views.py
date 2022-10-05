@@ -12,8 +12,10 @@ def all_posts(request):
     posts = Post.objects.all()
     return render(request, 'blog/all_posts.html', {'posts':posts})
 
-def single_post(request):
-    return render(request, 'blog/single_post.html')
+def single_post(request, pk):
+    post = Post.objects.get(pk=pk)
+    return render(request, 'blog/single_post.html',
+                  {'post':post})
 
 def about(request):
     return render(request, 'blog/about.html')
