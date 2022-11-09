@@ -1,7 +1,8 @@
 {% extends 'blog/base.html' %}
-
+{% load markdown_extras %}
 {% block content %}
     {% load static %}
+
     <main role="main" class="container">
   <div class="row">
     <div class="blog-main text-light">
@@ -15,7 +16,7 @@
 
         <p>{{ post.Description }}</p>
         <hr>
-        <p> {{ post.Body }}</p>
+        <p> {{ post.Body | markdown | safe }}</p>
     </div><!-- /.blog-main -->
 
   </div><!-- /.row -->
