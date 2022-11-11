@@ -1,0 +1,23 @@
+{% extends 'blog/base.html' %}
+{% load markdown_extras %}
+{% block content %}
+
+    <main role="main" class="container">
+  <div class="row">
+    <div class="blog-main text-light mt-5">
+      <hr>
+      <hr>
+
+      <div class="blog-post">
+        <h2 class="blog-post-title">{{ programming_post.Title }}</h2>
+        <p class="blog-post-meta">{{ programming_post.Date }} by <a href="#">{{ programming_post.Author }}</a></p>
+
+        <p>{{ programming_post.Description }}</p>
+        <hr>
+        <p> {{ programming_post.Body | markdown | safe }}</p>
+    </div><!-- /.blog-main -->
+
+  </div><!-- /.row -->
+  </div>
+</main>
+{% endblock %}

@@ -14,8 +14,7 @@ def all_posts(request):
 
 def single_post(request, pk):
     post = Post.objects.get(pk=pk)
-    return render(request, 'blog/single_post.html',
-                  {'post':post})
+    return render(request, 'blog/single_post.html', {'post':post})
 
 def about(request):
     return render(request, 'blog/about.html')
