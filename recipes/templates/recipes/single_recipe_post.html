@@ -1,10 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'blog/base.html' %}
+{% load markdown_extras %}
+{% block content %}
+    {% load static %}
 
-</body>
-</html>
+    <main role="main" class="container">
+  <div class="row  justify-content-center">
+    <div class="blog-main text-light">
+      <hr>
+      <img src="{% static recipe_post.Image %}" height="500px"/>
+      <hr>
+
+      <div class="blog-post">
+        <h2 class="blog-post-title">{{ recipe_post.Title }}</h2>
+        <p class="blog-post-meta">{{ recipe_post.Date }} by <a href="#">{{ recipe_post.Author }}</a></p>
+
+        <p>{{ recipe_post.Description }}</p>
+        <hr>
+        <p> {{ recipe_post.Body | markdown | safe }}</p>
+    </div><!-- /.blog-main -->
+
+  </div><!-- /.row -->
+  </div>
+</main>
+{% endblock %}
