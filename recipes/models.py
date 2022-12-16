@@ -9,3 +9,5 @@ class Recipe_Post(models.Model):
     Date = models.DateField(auto_now_add=True)
     Author = models.ForeignKey('blog.Author', on_delete=models.CASCADE)
     Image = models.CharField(max_length=100)
+    def __str__(self):
+        return self.Title
