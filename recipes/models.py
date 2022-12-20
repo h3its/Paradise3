@@ -11,3 +11,5 @@ class Recipe_Post(models.Model):
     Image = models.CharField(max_length=100)
     def __str__(self):
         return self.Title
+
+    #title, description, ingredients, method
