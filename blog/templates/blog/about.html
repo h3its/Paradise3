@@ -1,6 +1,28 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
+<style>
+      #intro {
+        background-image: url("../../static/banners/Late Night(banner).png");
+        background-size: cover;
+        height: 55vh;
+      }
+
+      /* Height for devices larger than 576px */
+      @media (min-width: 992px) {
+        #intro {
+          margin-top: 50px;
+        }
+      }
+
+    </style>
+
+
+
+    <!-- Background image -->
+    <div id="intro" class="bg-image">
+        <p class="display-4 text-center p-5 text-light">This is a quote, there are many like it but this one is mine!</p>
+    </div>
     <main role="main" class="container">
 
   <div class="starter-template">

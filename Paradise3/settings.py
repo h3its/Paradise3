@@ -24,7 +24,7 @@ with open(os.path.join(BASE_DIR, 'secret_key.txt')) as f:
     SECRET_KEY = f.read().strip()
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['tacosonmars.com','www.tacosonmars.com']
 
@@ -121,16 +121,21 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'blog/static'),
+    os.path.join(BASE_DIR, 'programming/static'),
+    os.path.join(BASE_DIR, 'recipes/static'),
+]
 
 #HTTPS Settings
-SESSION_COOKIE_SECURE =True
-CSRF_COOKIE_SECURE =  True
-SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE =False
+CSRF_COOKIE_SECURE =  False
+SECURE_SSL_REDIRECT = False
 
 #HSTS Settings
 SECURE_HSTS_SECONDS = 31536000 #1 year
-SECURE_HSTS_PRELOAD = True
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = False
+SECURE_HSTS_INCLUDE_SUBDOMAINS = False
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
